@@ -16,7 +16,6 @@ class RegistryTest extends TestData {
         ArrayList<RequestHandler<?,?>> list = new ArrayList<>(){};
         list.add(new CapitalizeHandler());
         this.registry = new commandR.implementations.Registry().withHandlers(list);
-
     }
 
     @Test
