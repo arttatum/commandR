@@ -9,9 +9,6 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
-    // Add spring framework for dependency management
-    id 'org.springframework.boot' version '2.5.2' apply false
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 repositories {
@@ -25,18 +22,9 @@ dependencies {
 
     // This dependency is exported to consumers, that is to say found on their compile classpath.
     api 'org.apache.commons:commons-math3:3.6.1'
-
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
-    implementation 'org.springframework.boot:spring-boot-starter'
 }
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
-}
-
-dependencyManagement {
-    imports {
-        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
-    }
 }
