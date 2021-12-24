@@ -1,4 +1,3 @@
 package commandR.interfaces;
 
-public interface Mediator extends Sender {
-}
+public interface Mediator extends Sender { }
